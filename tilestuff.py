@@ -1,4 +1,7 @@
-#comment
+#I use a float number to indicate a position of the player. A while loop repeats until the player
+#reaches the winning tile. If statments in the loop check the players location, print out the available directions
+#to travel and ask for a new input telling where to travel next. In each location invalid commands make 
+# an error message appear and force the player to choose again.
 
 location = 1.1
 
