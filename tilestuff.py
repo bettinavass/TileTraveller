@@ -1,3 +1,12 @@
+#1. The first part of the problem because it had more repeated code and was simpler to implement.
+
+#2. The second imlementation is much more readable, it shorter and it contains functions with names
+# that explaine what they are doing.
+
+#3. All the new locations (north,west,south,east) and its calculation
+# and the input loop.
+
+
 def move_north(position):
     new_location = round(position + 0.1, 2)
     return new_location
