@@ -14,6 +14,12 @@ def move_east(position):
     new_location = round(location + 1, 2)
     return new_location
 
+def get_input(allowed_directions):
+    direction = (input("Direction: ")) 
+    while direction.lower() not in allowed_directions:
+        print("Not a valid direction!")
+        direction = (input("Direction: ")) 
+    return direction
 
 
 
@@ -21,22 +27,16 @@ def move_east(position):
 location = 1.1
 
 while location != 3.1:
+
     if location == 1.1:
         print("You can travel: (N)orth.")
-
-        direction = (input("Direction: ")) 
-        while direction.lower() not in ['n']:
-            print("Not a valid direction!")
-            direction = (input("Direction: ")) 
+        direction = get_input(["n"])
         if direction.lower() == "n":
             location = move_north(location)
 
     elif location == 1.2:
          print("You can travel: (N)orth or (E)ast or (S)outh.")
-         direction = (input("Direction: "))
-         while direction.lower() not in ['n', 's', 'e']:
-            print("Not a valid direction!")  
-            direction = (input("Direction: ")) 
+         direction = get_input(['n', 's', 'e'])
          if direction.lower() == "n":
              location = move_north(location)
          elif direction.lower() == "s":
@@ -46,10 +46,7 @@ while location != 3.1:
 
     elif location == 1.3:
         print("You can travel: (E)ast or (S)outh.")
-        direction = (input("Direction: "))
-        while direction.lower() not in ['s', 'e']:
-            print("Not a valid direction!")  
-            direction = (input("Direction: ")) 
+        direction = get_input(['s', 'e'])
         if direction.lower() == "e":
             location = move_east(location)
         elif direction.lower() == "s":
@@ -57,10 +54,7 @@ while location != 3.1:
 
     elif location == 2.3:
         print("You can travel: (E)ast or (W)est.")
-        direction = (input("Direction: "))
-        while direction.lower() not in ['w', 'e']:
-            print("Not a valid direction!")
-            direction = (input("Direction: ")) 
+        direction = get_input(['w', 'e'])
         if direction.lower() == "w":
             location = move_west(location)
         elif direction.lower() == "e":
@@ -68,10 +62,7 @@ while location != 3.1:
 
     elif location == 2.2:
         print("You can travel: (S)outh or (W)est.")
-        direction = (input("Direction: "))
-        while direction.lower() not in ['s', 'w']:
-            print("Not a valid direction!")
-            direction = (input("Direction: ")) 
+        direction = get_input(['s', 'w'])
         if direction.lower() == "s":
             location = move_south(location)
         elif direction.lower() == "w":
@@ -79,19 +70,13 @@ while location != 3.1:
 
     elif location == 2.1:
         print("You can travel: (N)orth.")
-        direction = (input("Direction: "))
-        while direction.lower() not in ['n']:
-            print("Not a valid direction!")
-            direction = (input("Direction: ")) 
+        direction = get_input(['n'])
         if direction.lower() == "n":
             location = move_north(location) 
 
     elif location == 3.3:
         print("You can travel: (S)outh or (W)est.")
-        direction = (input("Direction: "))
-        while direction.lower() not in ['s', 'w']:
-            print("Not a valid direction!")
-            direction = (input("Direction: ")) 
+        direction = get_input(['s', 'w'])
         if direction.lower() == "w":
             location = move_west(location)
         elif direction.lower() == "s":
@@ -99,10 +84,7 @@ while location != 3.1:
 
     elif location == 3.2:
         print("You can travel: (N)orth or (S)outh.")
-        direction = (input("Direction: "))
-        while direction.lower() not in ['n', 's']:
-            print("Not a valid direction!")
-            direction = (input("Direction: "))
+        direction = get_input(['n', 's'])
         if direction.lower() == "n":
             location = move_north(location)
         elif direction.lower() == "s":
