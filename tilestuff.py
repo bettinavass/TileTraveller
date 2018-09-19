@@ -1,7 +1,22 @@
-#I use a float number to indicate a position of the player. A while loop repeats until the player
-#reaches the winning tile. If statments in the loop check the players location, print out the available directions
-#to travel and ask for a new input telling where to travel next. In each location invalid commands make 
-# an error message appear and force the player to choose again.
+def move_north(position):
+    new_location = round(position + 0.1, 2)
+    return new_location
+
+def move_west(position):
+    new_location = round(location -1, 2)
+    return new_location
+
+def move_south(position):
+    new_location = round(location - 0.1, 2)
+    return new_location
+
+def move_east(position):
+    new_location = round(location + 1, 2)
+    return new_location
+
+
+
+
 
 location = 1.1
 
@@ -14,7 +29,7 @@ while location != 3.1:
             print("Not a valid direction!")
             direction = (input("Direction: ")) 
         if direction.lower() == "n":
-            location = round(location + 0.1, 2)
+            location = move_north(location)
 
     elif location == 1.2:
          print("You can travel: (N)orth or (E)ast or (S)outh.")
@@ -23,11 +38,11 @@ while location != 3.1:
             print("Not a valid direction!")  
             direction = (input("Direction: ")) 
          if direction.lower() == "n":
-             location = round(location + 0.1, 2)
+             location = move_north(location)
          elif direction.lower() == "s":
-             location = round(location - 0.1, 2)
+             location = move_south(location)
          elif direction.lower() == "e":
-             location = round(location + 1, 2)  
+             location = move_east(location)
 
     elif location == 1.3:
         print("You can travel: (E)ast or (S)outh.")
@@ -36,9 +51,9 @@ while location != 3.1:
             print("Not a valid direction!")  
             direction = (input("Direction: ")) 
         if direction.lower() == "e":
-            location = round(location + 1, 2)
+            location = move_east(location)
         elif direction.lower() == "s":
-            location = round(location - 0.1, 2)
+            location = move_south(location)
 
     elif location == 2.3:
         print("You can travel: (E)ast or (W)est.")
@@ -47,9 +62,9 @@ while location != 3.1:
             print("Not a valid direction!")
             direction = (input("Direction: ")) 
         if direction.lower() == "w":
-            location = round(location -1, 2)
+            location = move_west(location)
         elif direction.lower() == "e":
-            location = round(location +1, 2)
+            location = move_east(location)
 
     elif location == 2.2:
         print("You can travel: (S)outh or (W)est.")
@@ -58,9 +73,9 @@ while location != 3.1:
             print("Not a valid direction!")
             direction = (input("Direction: ")) 
         if direction.lower() == "s":
-            location = round(location -0.1, 2)
+            location = move_south(location)
         elif direction.lower() == "w":
-            location = round(location -1, 2)    
+            location = move_west(location)   
 
     elif location == 2.1:
         print("You can travel: (N)orth.")
@@ -69,7 +84,7 @@ while location != 3.1:
             print("Not a valid direction!")
             direction = (input("Direction: ")) 
         if direction.lower() == "n":
-            location = round(location +0.1, 2)  
+            location = move_north(location) 
 
     elif location == 3.3:
         print("You can travel: (S)outh or (W)est.")
@@ -78,9 +93,9 @@ while location != 3.1:
             print("Not a valid direction!")
             direction = (input("Direction: ")) 
         if direction.lower() == "w":
-            location = round(location -1, 2)
+            location = move_west(location)
         elif direction.lower() == "s":
-            location = round(location -0.1, 2)      
+            location = move_south(location)     
 
     elif location == 3.2:
         print("You can travel: (N)orth or (S)outh.")
@@ -89,8 +104,8 @@ while location != 3.1:
             print("Not a valid direction!")
             direction = (input("Direction: "))
         if direction.lower() == "n":
-            location = round(location +0.1, 2)
+            location = move_north(location)
         elif direction.lower() == "s":
-            location = round(location -0.1, 2)                                                                           
+            location = move_south(location)                                                                          
 else:
     print("Victory!")
